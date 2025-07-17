@@ -37,11 +37,12 @@ export default function PlasmicLoaderPage(props: {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { catchall } = context.params ?? {};
-  const plasmicPath = typeof catchall === 'string' ? catchall : Array.isArray(catchall) ? `/${catchall.join('/')}` : '/';
+  const plasmicPath = Array.isArray(catchall) ? `/${catchall.join('/')}` : `/${catchall}`;
+  
   const plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
   if (!plasmicData) {
     // non-Plasmic catch-all
-    return { props: {} };
+    return { notFound: true };
   }
   const pageMeta = plasmicData.entryCompMetas[0];
   // Cache the necessary data fetched for the page
@@ -62,11 +63,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const pageModules = await PLASMIC.fetchPages();
   return {
-    paths: pageModules.map((mod) => ({
-      params: {
-        catchall: mod.path.substring(1).split("/"),
-      },
-    })),
+    paths: pageModules
+      .filter((mod) => mod.path !== '/') // Exclude root path
+      .map((mod) => ({
+        params: {
+          catchall: mod.path.substring(1).split("/"),
+        },
+      })),
     fallback: "blocking",
   };
 }

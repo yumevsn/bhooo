@@ -1,4 +1,28 @@
-This is a Next.js project bootstrapped with [`create-plasmic-app`](https://www.npmjs.com/package/create-plasmic-app).
+# Hopeforatree - Mental Health Support Platform for Zimbabwe
+
+Hopeforatree is a comprehensive web platform that connects people in Zimbabwe with mental health and social support services. The platform serves as a centralized directory of resources, emergency help information, and professional networking for mental health practitioners.
+
+## Target Audience
+
+- Individuals seeking mental health and social support services in Zimbabwe
+- Mental health professionals and social workers who want to contribute to the platform
+- Community organizations providing mental health and social services
+
+## Features
+
+- **Resource Directory**: Searchable database of mental health services across Zimbabwe
+- **Emergency Help**: Quick access to crisis helplines and emergency contacts
+- **Professional Network**: Platform for mental health professionals to connect and collaborate
+- **Educational Resources**: Self-help materials and mental health information
+- **Support Group Finder**: Tool to locate peer support groups
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Plasmic (for visual components)
+- CSS Modules
 
 ## Getting Started
 
@@ -6,20 +30,25 @@ First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-Open your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing your project in Plasmic Studio. The page auto-updates as you edit the project.
+## Project Structure
 
-## Learn More
+- `pages/` - Next.js pages
+- `public/` - Static assets
+- `styles/` - CSS modules and global styles
+- `plasmic-init.ts` - Plasmic configuration
 
-With Plasmic, you can enable non-developers on your team to publish pages and content into your website or app.
+## Contributing
 
-To learn more about Plasmic, take a look at the following resources:
+We welcome contributions to the Hopeforatree platform. Please feel free to submit pull requests or open issues to improve the platform.
 
-- [Plasmic Website](https://www.plasmic.app/)
-- [Plasmic Documentation](https://docs.plasmic.app/learn/)
-- [Plasmic Community Forum](https://forum.plasmic.app/)
+## License
 
-You can check out [the Plasmic GitHub repository](https://github.com/plasmicapp/plasmic) - your feedback and contributions are welcome!
+[MIT](https://choosealicense.com/licenses/mit/)
